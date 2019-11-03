@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class aa{
+public class array{
 
     public static void main(String[] args){
         int[] arr =new int[5];
