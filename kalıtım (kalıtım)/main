@@ -1,0 +1,87 @@
+import java.util.Scanner;
+public class main {
+
+    public static void main(String[] args){
+
+        Scanner scan = new Scanner(System.in);
+
+        Developer developer = new Developer();
+        Tester tester = new Tester();
+        developer.Developer(16060424,"gürkan kır","male",1998,5000,"123456","omu",2022);
+        tester.Tester(17060243,"umut ay","male",1997,4500,"654321","test control");
+
+        System.out.println(" welcome to the personnel system ");
+        
+        String transactions ="1. click to make developer login \n" +
+                              "2. Click to make controller input \n" + 
+                              "q. click to log out" ;
+
+        while(true){
+
+            System.out.println(transactions);
+            System.out.print("please login : ");
+            String input = scan.nextLine();
+
+            if (input.equals("1")){
+
+                while (true){
+
+                    System.out.println("Enter your staff number and password ");
+
+                    System.out.print("Enter your staff number : ");
+                    int staffNumber = scan.nextInt();
+                    scan.nextLine();
+
+                    System.out.print("Enter your password : ");
+                    String password = scan.nextLine();
+
+                    if (staffNumber == developer.getStaffNumber() && password.equals(developer.getPassword())){
+
+                        System.out.println("dear " + developer.getName() + "You have successfully logged in");
+                        break;
+                    }
+                    else {
+                        
+                        System.out.println("you have logged in incorrectly, please try again.");
+                    }
+
+                }
+                break;
+            }
+            else if (input.equals("2")){
+
+                while (true){
+
+                    System.out.println("Enter your staff number and password ");
+
+                    System.out.print("Enter your staff number : ");
+                    int staffNumber = scan.nextInt();
+                    scan.nextLine();
+                    
+                    System.out.print("Enter your password : ");
+                    String password = scan.nextLine();
+
+                    if (staffNumber == tester.getStaffNumber() && password.equals(tester.getPassword())){
+
+                        System.out.println("dear " + tester.getName() + "You have successfully logged in");
+                        break;
+                    }
+                    else {
+                        
+                        System.out.println("you have logged in incorrectly, please try again.");
+                    }
+                    
+                }
+                break;
+            }
+            else if(input.equals("q")){
+                System.out.println("exiting the system");
+                System.exit(0);
+            }
+            else {
+                System.out.println("you did wrong, please try again");
+            }
+        }
+        
+    }
+}
