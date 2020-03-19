@@ -1,0 +1,74 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+import java.util.Scanner;
+public class Main {
+
+    public static void primeNumber(int foo){
+
+        int i = 2;
+        boolean answer=true;
+        while (i < foo ) {
+
+            if (foo % i == 0 ) {
+                
+                answer=false;
+                break;
+            }
+
+            i = i + 1;
+        }
+        
+        if(answer==true){
+            
+            System.out.println(foo + " is the prime number");
+        }
+        else{
+            
+           System.out.println("The number "+foo+ " is not the prime number"); 
+        }
+    }
+    
+    public static void fibonacci(int number){		
+	
+	    int firstNumber=0;
+	    int secondNumber=1;
+	    int thirdNumber=0;
+	
+	    while(secondNumber<number){
+	        
+	        System.out.println(firstNumber+"-"+secondNumber +"=" +(firstNumber+secondNumber));
+	    	thirdNumber=secondNumber+firstNumber;
+	    	firstNumber=secondNumber;
+	    	secondNumber=thirdNumber;
+	    	
+	    }
+	    
+	    if(secondNumber==number){
+	        
+	        System.out.println(number+" is the number of fibonacci");
+	    }
+	    else{
+	        
+	       System.out.println(number+" is not the number of Fibonacci");
+	    }
+    	
+    }
+
+    public static void main(String[] args) {
+
+        Scanner scan = new Scanner(System.in);
+
+        System.out.print("Please enter a number : ");
+        int numberEntered = scan.nextInt();
+
+        primeNumber(numberEntered);
+        fibonacci(numberEntered);
+    }
+}
+
